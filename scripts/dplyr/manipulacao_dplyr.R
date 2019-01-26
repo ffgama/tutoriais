@@ -17,6 +17,7 @@ dataset_game %>% head() %>% summary()
 
 
 ############# FILTRO 
+
 # filtra um conjunto de linhas sob determinadas condições
 filter(dataset_game, Publisher == "Nintendo", EU_Sales >= 5 & Year == 2006)
 
