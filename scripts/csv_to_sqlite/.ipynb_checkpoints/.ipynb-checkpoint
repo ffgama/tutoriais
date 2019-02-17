@@ -2,18 +2,18 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# let todos os arquivos csv do diretório e guardar em um lista\n",
+    "# ler todos os arquivos csv do diretório e guardar em um objeto\n",
     "import os\n",
     "all_files = list(filter(lambda x: '.csv' in x, os.listdir('sakila_data/')))"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -29,7 +29,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -40,30 +40,30 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
-    "# obtendo os nomes das tabelas\n",
-    "table_names = [os.path.splitext(elem)[0] for elem in all_files]"
+    "# criando uma lista com os nomes das tabelas\n",
+    "table_names = all_files"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
     "# obtendo os campos de todas as tabelas\n",
     "table_fields = []\n",
-    "for i in range(4):\n",
+    "for i in  range(0, len(table_names)):\n",
     "    columnNames = list(full_dataset[i].head(0))\n",
     "    table_fields.append(columnNames)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -72,7 +72,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -83,7 +83,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -99,47 +99,6 @@
     "        cur.execute(query, insert_register)\n",
     "        con.commit()"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 9,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "['actor', 'film', 'film_actor', 'language']"
-      ]
-     },
-     "execution_count": 9,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "[os.path.splitext(elem)[0] for elem in all_files]"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {

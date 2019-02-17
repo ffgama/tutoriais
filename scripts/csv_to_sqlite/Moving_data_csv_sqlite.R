@@ -1,6 +1,5 @@
 #  movendo dados de um CSV para um SQLite
 setwd("sakila_data/")
-
 library(dplyr)
 library(readr)
 
